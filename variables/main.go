@@ -7,7 +7,7 @@ func main() {
 	var age = 10
 	var isAwesome = true
 
-	// shorthand syntax
+	// shorthand syntax (shorthand syntax only work inside functions)
 	// name := "Golang"
 	// age := 10
 	// isAwesome := true
