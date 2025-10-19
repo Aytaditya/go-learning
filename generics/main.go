@@ -1,5 +1,9 @@
 package main
 
+import "fmt"
+
+// PREVENTS CODE REPETITION
+
 // the problem is this we can only print slice of int but what if we want to print slice of string or float64
 func print(items []int) {
 	for _, v := range items {
@@ -10,15 +14,21 @@ func print(items []int) {
 // we can use generics to solve this problem
 func genericPrint[T any](items []T) {
 	for _, v := range items {
-		println(v)
+		fmt.Println(v)
 	}
 }
 
-// now instead of making we can make it custom for example int and float32
+// now instead of making any we can make it custom for example int and float32
 func customPrint[T int | float32](items []T) {
 	for _, v := range items {
-		println(v)
+		fmt.Println(v)
 	}
+}
+
+// we can also pass multiple generic types
+func genericPrintTwoTypes[T1 any, T2 string](item1 T1, item2 T2) {
+	fmt.Println(item1)
+	fmt.Println(item2)
 }
 
 func main() {
@@ -32,4 +42,6 @@ func main() {
 	customPrint(nums)
 	customPrint(flNums)
 	// customPrint(names)  this wont work as names is string type
+
+	genericPrintTwoTypes(100, "Hello Generics")
 }
