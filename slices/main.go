@@ -16,7 +16,7 @@ func main() {
 	fmt.Println(len(nums))
 
 	// using make function to create a slice
-	slice := make([]int, 5)
+	slice := make([]int, 5) // here 5 is initial length of slice
 	// appending values in slice
 	for i := 0; i < 5; i++ {
 		slice = append(slice, i)
