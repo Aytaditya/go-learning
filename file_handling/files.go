@@ -83,7 +83,7 @@ func main() {
 		}
 
 		er := writer.WriteByte(b)
-		if err != nil {
+		if er != nil {
 			panic(er)
 		}
 	}
@@ -91,5 +91,11 @@ func main() {
 	writer.Flush()
 	fmt.Println()
 	fmt.Println("File copied successfully")
+
+	// DELETING A FILE
+	// errorr:=os.Remove("newfile.txt")
+	// if errorr!=nil{
+	// 	panic(errorr)
+	// }
 
 }
